@@ -3,7 +3,7 @@
 
 # In[31]:
 
-
+# Works up to Cirq version 1.2.0
 import cirq
 import cirq_google
 
