@@ -5,13 +5,12 @@
 
 
 import cirq
-
+import cirq_google
 
 # In[32]:
 
 
-print(cirq.google.Sycamore)
-
+print(cirq_google.devices.Sycamore)
 
 # In[64]:
 
@@ -23,13 +22,12 @@ b = cirq.NamedQubit("b")
 
 # Create a circuit from the list of operations.
 circuit = cirq.Circuit(
-cirq.H(a),
-cirq.CNOT(a, b),
-    cirq.measure(a,b)
+    cirq.H(a),
+    cirq.CNOT(a, b),
+    cirq.measure(a, b)
 )
 print("Circuit:\n")
 print(circuit)
-
 
 # In[65]:
 
@@ -38,12 +36,10 @@ print("\nMoments in the circuit:\n")
 for i, moment in enumerate(circuit):
     print('Moment {}: {}'.format(i, moment))
 
-
 # In[66]:
 
 
 print(repr(circuit))
-
 
 # In[68]:
 
@@ -54,7 +50,6 @@ result = simulator.run(circuit, repetitions=20)
 print("Measurement results:")
 print(result)
 
-
 # In[76]:
 
 
@@ -62,10 +57,9 @@ circuit2 = cirq.Circuit(
     cirq.H(a),
     cirq.X(b),
     cirq.CNOT(a, b),
-    cirq.measure(a,b)
+    cirq.measure(a, b)
 )
 simulator = cirq.Simulator()
 result = simulator.run(circuit2, repetitions=20)
 print(circuit2)
 print(result)
-
