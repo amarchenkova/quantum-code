@@ -5,7 +5,7 @@
 
 # In[1]:
 
-
+# Works up to Qiskit version 0.45.0
 from qiskit import QuantumCircuit, ClassicalRegister, QuantumRegister, execute, Aer, IBMQ
 from qiskit.visualization import plot_histogram
 provider = IBMQ.load_account()
